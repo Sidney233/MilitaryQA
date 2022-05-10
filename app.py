@@ -8,6 +8,7 @@ from MilitaryGraph import MilitaryGraph
 app = Flask(__name__)
 handler = MilitaryGraph()
 
+
 #
 # def cut_text(text, lenth):
 #     textArr = re.findall('.{' + str(lenth) + '}', text)
@@ -46,11 +47,16 @@ handler = MilitaryGraph()
 #     return labels
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
 
-@app.route("")
+
+@app.route("/search", methods=["POST"])
+def search():
+    print(request.form)
+    return redirect("/")
+
 
 if __name__ == '__main__':
     app.run(host="localhost", port=5000)
