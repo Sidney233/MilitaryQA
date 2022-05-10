@@ -1,0 +1,13 @@
+
+ner/ner.h5/model_weights.h5
+ner/ner.h5/model_info.json
+ner/chinese_L-12_H-768_A-12/vocab.txt
+ner/chinese_L-12_H-768_A-12/bert_model.ckpt.meta
+ner/chinese_L-12_H-768_A-12/bert_model.ckpt.index
+ner/chinese_L-12_H-768_A-12/bert_model.ckpt.data-00000-of-00001
+ner/chinese_L-12_H-768_A-12/bert_config.json
+*.iml
+.idea/MilitaryQA.iml
+__pycache__/MilitaryGraph.cpython-37.pyc
+.idea/MilitaryQA.iml
+*.iml
