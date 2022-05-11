@@ -7,7 +7,8 @@ from MilitaryGraph import MilitaryGraph
 # loaded_model = kashgari.utils.load_model('ner/ner.h5')
 app = Flask(__name__)
 handler = MilitaryGraph()
-
+class Config(object):
+    SECRET_KEY = "you - will - never - guess"
 
 #
 # def cut_text(text, lenth):
@@ -54,9 +55,11 @@ def index():
 
 @app.route("/search", methods=["POST"])
 def search():
-    print(request.form)
+    res, res_type, res_num = handler.qa_main(request.form["question"])
+    flash(res)
     return redirect("/")
 
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=5000)
+    app.config.from_object(Config())
+    app.run(host="0.0.0.0", port=5000)

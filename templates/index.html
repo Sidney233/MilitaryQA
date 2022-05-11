@@ -978,12 +978,21 @@
                             </div>
                         </div>
                         <div id="suggest-align" class="skin-search-input">
-                            <input type="text" name="q" class="placeholder lowie-bg" id="input" suggestwidth="0px"
+                            <input type="text" name="question" class="placeholder lowie-bg" id="input"
+                                   suggestwidth="0px"
                                    autocomplete="off">
                         </div>
                         <input type="submit" id="search-button" class="skin-search-button" value="搜索">
                     </fieldset>
                 </form>
+                <style>
+                    .flash {
+                        font-size: 18px
+                    }
+                </style>
+                {% for message in get_flashed_messages() %}
+                    <div class=flash>{{ message }}</div>
+                {% endfor %}
             </div>
         </section>
 
